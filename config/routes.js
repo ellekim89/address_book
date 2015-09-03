@@ -32,7 +32,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'post /person/:id/createCategory' : 'PersonController.create'
+  '/': 'PagesController.index',
+
+  "get *":{
+    controller:"PagesController",
+    action:"index",
+    skipAssets: true,
+    skipRegex: /^\/api\/.*$/
+}
 
   /***************************************************************************
   *                                                                          *

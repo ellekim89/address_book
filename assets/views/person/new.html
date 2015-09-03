@@ -1,0 +1,22 @@
+<h1>Add a New Person!</h1>
+<form name="newPersonForm" ng-submit="createPerson()" novalidate>
+  <div class="form-group" ng-class="{ 'has-error': newPersonForm.firstName.$touched && newPersonForm.firstName.$invalid }">
+    <label for="">First Name:</label>
+    <input required ng-minlength="1" ng-maxlength="20" name="firstName" ng-model="newPerson.firstName" type="text" class="form-control" id="">
+    <div ng-if="newPersonForm.firstName.$touched" ng-messages="newPersonForm.firstName.$error" class="help-block">
+      <div ng-messages-include="/views/messages.html"></div>
+    </div>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error': newPersonForm.lastName.$touched && newPersonForm.lastName.$invalid }">
+    <label for="">Last Name:</label>
+    <input ng-minlength="1" ng-maxlength="20" required name="lastName" ng-model="newPerson.lastName" class="form-control">
+    <div ng-if="newPersonForm.lastName.$touched" ng-messages="newPersonForm.lastName.$error" class="help-block">
+      <div ng-messages-include="/views/messages.html"></div>
+    </div>
+  </div>
+  <div class="form-group">
+  <label for="">Notes:</label>
+  <textarea name="notes" class="form-control" ng-model="newPerson.notes"></textarea>
+  </div>
+  <button ng-disabled="newPersonForm.$invalid" type="submit" class="btn btn-success">Add a New Person</button>
+</form>
