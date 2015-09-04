@@ -18,20 +18,16 @@ module.exports = {
       required: true
     },
     address: {
-      type: 'string',
-      required: true
+      type: 'string'
     },
     city:{
-      type: 'string',
-      required: true
+      type: 'string'
     },
     state:{
-      type: 'string',
-      required: true
+      type: 'string'
     },
     zipCode:{
-      type: 'string',
-      required: true
+      type: 'string'
     },
     phoneNumber:{
       type: 'string',

@@ -1,4 +1,19 @@
 <h1> {{person.firstName}} {{person.lastName}}</h1>
+<h2> Add Contact Information
+<a href="/person/{{person.id}}/new/contacts" class ="pull-right btn btn-success glyphicon glyphicon-plus"> </a>
+</h2>
 <em> {{person.createdAt | date: 'short'}} </em>
 
-<p> {{person.notes}} </p>
+
+
+<p> {{person.notes}}</p>
+
+
+<div class="well" ng-repeat="contact in person.contacts">
+<a ng-click="deleteContact(contact)" class="pull-right glyphicon glyphicon-trash"></a>
+<a ng-click="editContact(contact)" class="pull-right glyphicon glyphicon-pencil"></a>
+  {{contact.id}}<br><br>
+  {{contact.name}}<br><br>
+  {{contact.email}}<br><br>
+</div>
+
